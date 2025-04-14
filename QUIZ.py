@@ -29,3 +29,11 @@ import random
 
 def generate_question():
     operators = ['+', '-', '*', '/']
+    operator = random.choice(operators)
+
+    while True:
+        num1 = random.randint(1, 1000)
+        num2 = random.randint(1, 1000)
+        if operator == '/' and num1 % num2 != 0:
+            continue
+        break
