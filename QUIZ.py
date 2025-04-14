@@ -53,6 +53,10 @@ def generate_question():
 def generate_choices(correct_answer):
     choices = []
     while len(choices) < 3:
-        fake = correct_answer + random.randint(-10, 10) #random plus or minus 10 with the correct answer to create fake options
+        fake = correct_answer + random.randint(-10, 10)
         if fake != correct_answer and fake not in choices:
             choices.append(fake)
+
+    correct_position = random.randint(0, 3)
+    choices.insert(correct_position, correct_answer)
+    return choices, correct_position
