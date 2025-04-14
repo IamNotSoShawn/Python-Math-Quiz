@@ -37,3 +37,10 @@ def generate_question():
         if operator == '/' and num1 % num2 != 0:
             continue
         break
+    
+    if operator == '+':
+        correct_answer = num1 + num2
+    elif operator == '-':
+        correct_answer = num1 - num2
+    elif operator == '*':
+        correct_answer = num1 * num2
