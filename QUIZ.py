@@ -49,3 +49,10 @@ def generate_question():
 
     question_text = (num1, operator, num2)
     return question_text, correct_answer
+
+def generate_choices(correct_answer):
+    choices = []
+    while len(choices) < 3:
+        fake = correct_answer + random.randint(-10, 10) #random plus or minus 10 with the correct answer to create fake options
+        if fake != correct_answer and fake not in choices:
+            choices.append(fake)
