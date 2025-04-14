@@ -44,3 +44,8 @@ def generate_question():
         correct_answer = num1 - num2
     elif operator == '*':
         correct_answer = num1 * num2
+    elif operator == '/':
+        correct_answer = num1 // num2
+
+    question_text = (num1, operator, num2)
+    return question_text, correct_answer
