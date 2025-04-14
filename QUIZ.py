@@ -25,3 +25,7 @@
 #     - Print all of the user’s answers
 
 # STOP
+import random
+
+def generate_question():
+    operators = ['+', '-', '*', '/']
