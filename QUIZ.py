@@ -29,7 +29,7 @@
 import random
 import os
 
-print("Welcome please choose the difficulty for the math questions you are going to be asked with. /n easy is 1 - 10 /n medium is 1 - 100 /n hard is 1 - 1000 /n expert is 1 - 10000 ")
+print("\nWelcome please choose the difficulty for the math questions you are going to be asked with. \n\n easy is 1 - 10 \n medium is 1 - 100 \n hard is 1 - 1000 \n expert is 1 - 10000 \n ")
 
 def generate_question(difficulty):
     operators = ['+', '-', '*', '/']
@@ -113,7 +113,7 @@ def main():
         for ans in user_answers:
             print(ans)
 
-    print("\nSaving files to:", os.getcwd())
-
+    print("\nSaving files to:", os.getcwd()) #directory of the current python file
+    print("Thank you for using my program !")
 if __name__ == "__main__":
     main()
