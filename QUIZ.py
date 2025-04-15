@@ -38,8 +38,10 @@ def generate_question(difficulty):
         min_val, max_val = 1, 10
     elif difficulty == 'medium':
         min_val, max_val = 1, 100
-    else:
+    elif difficulty == 'hard':
         min_val, max_val = 1, 1000
+    else:
+        min_val, max_val = 1, 10000
 
     while True:
         num1 = random.randint(min_val, max_val)
@@ -79,8 +81,8 @@ def main():
 
     # Ask user for difficulty
     while True:
-        difficulty = input("Choose difficulty (easy/medium/hard): ").lower()
-        if difficulty in ['easy', 'medium', 'hard']:
+        difficulty = input("Choose difficulty (easy/medium/hard/expert): ").lower()
+        if difficulty in ['easy', 'medium', 'hard','expert']:
             break
         print("Invalid choice. Please type easy, medium, or hard.")
 
