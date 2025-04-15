@@ -29,6 +29,8 @@
 import random
 import os
 
+print("Welcome please choose the difficulty for the math questions you are going to be asked with. /n easy is 1 - 10 /n medium is 1 - 100 /n hard is 1 - 1000 /n expert is 1 - 10000 ")
+
 def generate_question(difficulty):
     operators = ['+', '-', '*', '/']
     operator = random.choice(operators)
