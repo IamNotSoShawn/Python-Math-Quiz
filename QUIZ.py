@@ -72,3 +72,27 @@ def main():
             question, correct = generate_question()
             choices, correct_index = generate_choices(correct)
 
+            print(f"\nQuestion {i}: {question[0]} {question[1]} {question[2]}")
+            for options, choice in enumerate(choices):
+                print(f"  {labels[options]}) {choice}")
+
+            while True:
+                user_input = input("Your answer (a/b/c/d): ").lower()
+                if user_input in labels:
+                    break
+                print("Invalid input. Please choose a, b, c, or d.")
+
+            user_answers.append(f"{i}.{user_input}")
+            correct_answers.append(f"{i}.{labels[correct_index]}")
+
+            ans_file.write(f"{i}.{user_input}\n")
+            corr_file.write(f"{i}.{labels[correct_index]}\n")
+
+        print("\nYour answers:")
+        for ans in user_answers:
+            print(ans)
+
+    print("\nSaving files to:", os.getcwd())
+
+if __name__ == "__main__":
+    main()
