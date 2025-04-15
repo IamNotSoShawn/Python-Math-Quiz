@@ -26,6 +26,7 @@
 
 # STOP
 import random
+import os
 
 def generate_question():
     operators = ['+', '-', '*', '/']
@@ -37,7 +38,7 @@ def generate_question():
         if operator == '/' and num1 % num2 != 0:
             continue
         break
-    
+
     if operator == '+':
         correct_answer = num1 + num2
     elif operator == '-':
@@ -60,3 +61,14 @@ def generate_choices(correct_answer):
     correct_position = random.randint(0, 3)
     choices.insert(correct_position, correct_answer)
     return choices, correct_position
+
+def main():
+    labels = ['a', 'b', 'c', 'd']
+    user_answers = []
+    correct_answers = []
+
+    with open("answers.txt", "w") as ans_file, open("correct_answers.txt", "w") as corr_file:
+        for i in range(1, 11): # 1 - 10 number of questions
+            question, correct = generate_question()
+            choices, correct_index = generate_choices(correct)
+
